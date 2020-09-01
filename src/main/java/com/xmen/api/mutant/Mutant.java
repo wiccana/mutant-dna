@@ -8,14 +8,14 @@ public class Mutant{
     private static final int seqLength = 4;
     private static char[][] matrix;
     
-    String[] dna = { 
-        "ATGCG",
-        "CAGGG",
-        "TTGTG",
-        "AGGAT",
-        "CCCTT",
-        "TCTCT"
-        };
+    // String[] dna = { 
+    //     "ATGCG",
+    //     "CAGGG",
+    //     "TTGTG",
+    //     "AGGAT",
+    //     "CCCTT",
+    //     "TCTCT"
+    //     };
    
     public static boolean isMutant (Dna dna) {
         

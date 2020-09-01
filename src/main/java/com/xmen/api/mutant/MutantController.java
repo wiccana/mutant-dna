@@ -10,12 +10,12 @@ import org.springframework.http.ResponseEntity;
 public class MutantController {
 
 	@PostMapping(path = "/mutant")
-	public ResponseEntity<String> isMutantController(@RequestBody Dna dna) {
+	public ResponseEntity<Dna> isMutantController(@RequestBody Dna dna) {
 		
 		if(Mutant.isMutant(dna)){
-			return new ResponseEntity<>("OK", HttpStatus.OK);
+			return new ResponseEntity<>(dna, HttpStatus.OK);
 		}else{
-			return new ResponseEntity<>("FORBIDDEN", HttpStatus.FORBIDDEN);
+			return new ResponseEntity<>(dna, HttpStatus.FORBIDDEN);
 		}
 		
     }
