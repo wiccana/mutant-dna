@@ -13,9 +13,9 @@ public class MutantController {
 	public ResponseEntity<Dna> isMutantController(@RequestBody Dna dna) {
 		
 		if(Mutant.isMutant(dna)){
-			return new ResponseEntity<>(dna, HttpStatus.OK);
+			return new ResponseEntity<>("OK", HttpStatus.OK);
 		}else{
-			return new ResponseEntity<>(dna, HttpStatus.FORBIDDEN);
+			return new ResponseEntity<>("FORBIDDEN", HttpStatus.FORBIDDEN);
 		}
 		
     }
