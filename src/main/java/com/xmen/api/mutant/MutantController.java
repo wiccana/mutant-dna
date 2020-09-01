@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 public class MutantController {
 
 	@PostMapping(path = "/mutant")
-	public ResponseEntity<Dna> isMutantController(@RequestBody Dna dna) {
+	public ResponseEntity<String> isMutantController(@RequestBody Dna dna) {
 		
 		if(Mutant.isMutant(dna)){
 			return new ResponseEntity<>("OK", HttpStatus.OK);
