@@ -21,13 +21,50 @@ class ApiApplicationTests {
 	public void postHumanDNA_403IsReceived()throws Exception {
 
 		//Given
-		String[] dna = {"ATAG","AAaA","ACGC","AaAC"};
+		String[] dna = {"ATAG","AATA","ACGC","AaAC"};
+
+		Dna mutant = new Dna(dna);
+
+		assertFalse( Mutant.isMutant(mutant) );
+
+	}
+
+	@Test
+	public void postMutantDNA_200IsReceived()throws Exception {
+
+		//Given
+		String[] dna = {"ATAG","AAAA","ACGC","AAAC"};
 
 		Dna mutant = new Dna(dna);
 
 		assertTrue( Mutant.isMutant(mutant) );
 
 	}
+
+	@Test
+	public void postWrongStringLengthDNA_403IsReceived()throws Exception {
+
+		//Given
+		String[] dna = {"ATAGRT","AAAA","ACGC","AaAC"};
+
+		Dna mutant = new Dna(dna);
+
+		assertFalse( Mutant.isValidDNA(mutant.getDna()) );
+
+	}
+	
+	@Test
+	public void postWrongArrayLengthDNA_403IsReceived()throws Exception {
+
+		//Given
+		String[] dna = {"ATAGRT","AAAA","ACGC"};
+
+		Dna mutant = new Dna(dna);
+
+		assertFalse( Mutant.isValidDNA(mutant.getDna()) );
+
+	}
+	
 		
 
 }

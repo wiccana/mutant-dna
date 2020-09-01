@@ -11,7 +11,13 @@ public class MutantController {
 
 	@PostMapping(path = "/mutant")
 	public ResponseEntity<Dna> isMutantController(@RequestBody Dna dna) {
-		
+
+		//Valid input
+		if(!Mutant.isValidDNA(dna.getDna())){
+			return new ResponseEntity<>(dna, HttpStatus.FORBIDDEN);
+		}
+
+		//Check if Mutant DNA		
 		if(Mutant.isMutant(dna)){
 			return new ResponseEntity<>(dna, HttpStatus.OK);
 		}else{
