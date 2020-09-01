@@ -18,14 +18,14 @@ public class Mutant{
                     searchDiagonal(matrix, "1") || 
                     searchDiagonal(matrix, "2")
             ){
-                System.out.println("INPUT MUTANTE");
+              // System.out.println("INPUT MUTANTE");
                 return true;
             }else{
-                System.out.println("INPUT HUMANO");
+               // System.out.println("INPUT HUMANO");
                 return false;
             }
         }else{
-            System.out.println("INPUT ERROR");
+           // System.out.println("INPUT ERROR");
             return false;
         }
 
@@ -135,7 +135,7 @@ public class Mutant{
             found++;
             newSeq = "";
         }
-        System.out.println(currentChar);
+        //System.out.println(currentChar);
         return newSeq;
     }
 
