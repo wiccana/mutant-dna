@@ -4,23 +4,15 @@ import java.util.regex.*;
 
 public class Mutant{
 
-    private static int found = 0;
     private static final int seqLength = 4;
+    private static int found = 0;
     private static char[][] matrix;
     
-    // String[] dna = { 
-    //     "ATGCG",
-    //     "CAGGG",
-    //     "TTGTG",
-    //     "AGGAT",
-    //     "CCCTT",
-    //     "TCTCT"
-    //     };
-   
     public static boolean isMutant (Dna dna) {
+
+        found = 0;
         
         if ( checkInput(dna.getDna())){
-            // System.out.println("horizontal");
             if(searchHorizontalVertical(matrix, "HORIZONTAL") ||
             searchHorizontalVertical(matrix, "VERTICAL") ||
                     searchDiagonal(matrix, "1") || 
@@ -149,11 +141,9 @@ public class Mutant{
 
 
     private static boolean checkInput(String[] input) {
-        // Converts input into 2d matrix. Returns empty matrix for invalid inputs
-        if (input.length < seqLength ){
+        if (input.length < seqLength){
             return false;
         }
-        // falta evaluar si la matriz es menor al seqLength
         char[][] auxMatrix = new char[input.length][input.length];
         Pattern validCharacterPattern = Pattern.compile("[atgcATGC]*");
         Pattern validLengthPattern = Pattern.compile(".{" + input.length + "}");
