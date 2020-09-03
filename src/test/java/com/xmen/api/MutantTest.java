@@ -11,7 +11,7 @@ import com.xmen.api.mutant.Dna;
 import com.xmen.api.mutant.Mutant;
 
 @SpringBootTest
-class ApiApplicationTests {
+class MutantTest {
 
 	@Test
 	void contextLoads() {
@@ -20,11 +20,8 @@ class ApiApplicationTests {
 	@Test
 	public void humanDNA_returnsFalse()throws Exception {
 
-		//Given
 		String[] dna = {"ATAG","AATA","ACGC","AAAC"};
-
 		Dna mutant = new Dna(dna);
-
 		assertFalse( Mutant.isMutant(mutant) );
 
 	}
@@ -32,11 +29,8 @@ class ApiApplicationTests {
 	@Test
 	public void mutantDNA_returnsTrue()throws Exception {
 
-		//Given
 		String[] dna = {"ATAG","AAAA","ACGC","AAAC"};
-
 		Dna mutant = new Dna(dna);
-
 		assertTrue( Mutant.isMutant(mutant) );
 
 	}
@@ -44,11 +38,8 @@ class ApiApplicationTests {
 	@Test
 	public void wrongStringLengthDNA_returnsFalse()throws Exception {
 
-		//Given
 		String[] dna = {"ATAGRT","AAAA","ACGC","AaAC"};
-
 		Dna mutant = new Dna(dna);
-
 		assertFalse( Mutant.isValidDNA(mutant.getDna()) );
 
 	}
@@ -56,15 +47,12 @@ class ApiApplicationTests {
 	@Test
 	public void wrongArrayLengthDNA_returnsFalse()throws Exception {
 
-		//Given
 		String[] dna = {"ATAGRT","AAAA","ACGC"};
-
 		Dna mutant = new Dna(dna);
-
 		assertFalse( Mutant.isValidDNA(mutant.getDna()) );
 
 	}
-	
-		
+
+			
 
 }

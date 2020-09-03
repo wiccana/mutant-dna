@@ -61,7 +61,7 @@ public class Mutant{
                     currentChar = dna[j].charAt(i);
                     nextChar = dna[j+1].charAt(i);
                 }
-                newSeq = compare(currentChar, nextChar, newSeq);
+                newSeq = compareChars(currentChar, nextChar, newSeq);
                 if(found > 1) return true;
                 missingChars = seqLength - newSeq.length();
             }
@@ -85,7 +85,7 @@ public class Mutant{
                currentChar = dna[a].charAt(b);
                nextChar = getNextChar(direction,dna,a,b);
                 
-                newSeq = compare(currentChar, nextChar, newSeq);
+                newSeq = compareChars(currentChar, nextChar, newSeq);
                 if(found > 1) return true;
                 missingChars = seqLength - newSeq.length();
                 // increase coord
@@ -111,7 +111,7 @@ public class Mutant{
   
                 currentChar = dna[a].charAt(b);
                 nextChar = getNextChar(direction,dna,a,b);
-                newSeq = compare(currentChar, nextChar, newSeq);
+                newSeq = compareChars(currentChar, nextChar, newSeq);
                 if(found > 1) return true;
 
                 missingChars = seqLength - newSeq.length();
@@ -131,13 +131,11 @@ public class Mutant{
     private static char getNextChar(Direction direction, String[] dna, int a, int b) {
         if (direction == Direction.LEFT_RIGHT)
          return dna[a - 1].charAt(b + 1);
-        if (direction == Direction.RIGHT_LEFT)
+        // else -> Direction.RIGHT_LEFT
         return dna[a - 1].charAt(b - 1);
-
-        return '.';
     }
 
-    private static String compare(char currentChar, char nextChar, String newSeq) {
+    private static String compareChars(char currentChar, char nextChar, String newSeq) {
         if (currentChar == nextChar) {
             if (newSeq.length() < 1 || currentChar == newSeq.charAt(0)) {
                 newSeq = newSeq + currentChar;

@@ -13,6 +13,9 @@ public class MutantController {
 	public ResponseEntity<Dna> isMutantController(@RequestBody Dna dna) {
 
 		//Valid input
+		if(dna == null || dna.getDna() == null){
+			return new ResponseEntity<>(dna, HttpStatus.FORBIDDEN);
+		}
 		if(!Mutant.isValidDNA(dna.getDna())){
 			return new ResponseEntity<>(dna, HttpStatus.FORBIDDEN);
 		}
