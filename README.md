@@ -2,21 +2,18 @@
 
 a technical challenge for MELI
 
-## Installation 🔧
+## Prerequisites 🔧
 
 Before starting please make sure to have installed:
-JRE 1.8 or higher
-JDK 1.8 or higher
-Maven 3.6.3 or higher
-
-```bash
-git clone git@github.com:wiccana/mutant-dna.git
-
-```
+*JRE 1.8 or higher
+*JDK 1.8 or higher
+*Maven 3.6.3 or higher
 
 ## Build and Run
-Go to pom.xml and run the following commands:
+
 ```bash
+git clone https://github.com/wiccana/mutant-dna.git
+cd mutant-dna
 mvn clean install
 mvn spring-boot:run
 
@@ -28,7 +25,6 @@ Application should be served at localhost:8080
 ```
 curl -v --header "Content-Type: application/json" -d "{\"dna\":[\"ATAG\",\"AAAA\",\"ACGC\",\"AAAC\"]}" http://localhost:8080/mutant
 ```
-
 should return 200 status code
 
 ## Build with
