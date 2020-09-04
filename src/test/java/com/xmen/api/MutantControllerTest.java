@@ -38,7 +38,7 @@ class MutantControllerTest {
         mockMvc.perform(
             MockMvcRequestBuilders.post("/mutant")
             .contentType(MediaType.APPLICATION_JSON)
-            .content("{\"dna\":[\"ATAG\",\"AATA\",\"ACGC\",\"AAAC\"]})")
+            .content("{\"dna\":[\"ATAG\",\"AATA\",\"ACGC\",\"AAAC\"]}")
         )
         .andExpect(MockMvcResultMatchers.status().isForbidden());
 	}
@@ -50,7 +50,7 @@ class MutantControllerTest {
         mockMvc.perform(
             MockMvcRequestBuilders.post("/mutant")
             .contentType(MediaType.APPLICATION_JSON)
-            .content("{\"dna\":[\"ATAG\",\"AAAA\",\"ACGC\",\"AAAC\"]})")
+            .content("{\"dna\":[\"ATAG\",\"AAAA\",\"ACGC\",\"AAAC\"]}")
         )
         .andExpect(MockMvcResultMatchers.status().isOk());
     }
@@ -61,7 +61,7 @@ class MutantControllerTest {
         mockMvc.perform(
             MockMvcRequestBuilders.post("/mutant")
             .contentType(MediaType.APPLICATION_JSON)
-            .content("{\"dna\":[\"ATATGA\",\"ACCTTG\",\"GAGATG\",\"TTATGT\",\"TATATG\",\"AGTTAT\"]})")
+            .content("{\"dna\":[\"ATATGA\",\"ACCTTG\",\"GAGATG\",\"TTATGT\",\"TATATG\",\"AGTTAT\"]}")
         )
         .andExpect(MockMvcResultMatchers.status().isOk());
 	}
@@ -72,7 +72,7 @@ class MutantControllerTest {
         mockMvc.perform(
             MockMvcRequestBuilders.post("/mutant")
             .contentType(MediaType.APPLICATION_JSON)
-            .content("{\"dna\":[\"ATAG\",\"AATA\",\"AAAAAAA\",\"AAAC\"]})")
+            .content("{\"dna\":[\"ATAG\",\"AATA\",\"AAAAAAA\",\"AAAC\"]}")
         )
         .andExpect(MockMvcResultMatchers.status().isForbidden());
 
@@ -84,7 +84,7 @@ class MutantControllerTest {
         mockMvc.perform(
             MockMvcRequestBuilders.post("/mutant")
             .contentType(MediaType.APPLICATION_JSON)
-            .content("{\"dna\":[\"ATAG\",\"AATA\",\"ACGC\"]})")
+            .content("{\"dna\":[\"ATAG\",\"AATA\",\"ACGC\"]}")
         )
         .andExpect(MockMvcResultMatchers.status().isForbidden());
 
