@@ -69,7 +69,7 @@ public class Mutant{
         return false;
     }
 
-       private static boolean searchDiagonal(String[] dna, Direction direction) {
+    private static boolean searchDiagonal(String[] dna, Direction direction) {
         int missingChars = seqLength;
         String newSeq = "";
 
