@@ -5,9 +5,9 @@ a technical challenge for MELI
 ## Prerequisites 🔧
 
 Before starting please make sure to have installed:
-*JRE 1.8 or higher
-*JDK 1.8 or higher
-*Maven 3.6.3 or higher
+* JRE 1.8 or higher
+* JDK 1.8 or higher
+* Maven 3.6.3 or higher
 
 ## Build and Run
 
@@ -26,6 +26,15 @@ Application should be served at localhost:8080
 curl -v --header "Content-Type: application/json" -d "{\"dna\":[\"ATAG\",\"AAAA\",\"ACGC\",\"AAAC\"]}" http://localhost:8080/mutant
 ```
 should return 200 status code
+
+
+## Run test coverage ⚙️
+
+from project directory run:
+```
+mvn test jacoco:report
+```
+Report should be accesible from target\site\jacoco\index.html
 
 ## Build with
 
