@@ -1,15 +1,15 @@
-# Mutant DNA
+# Mutant DNA 💡
 
 a technical challenge for MELI
 
-## Prerequisites 🔧
+## Prerequisites 📝
 
 Before starting please make sure to have installed:
 * JRE 1.8 or higher
 * JDK 1.8 or higher
 * Maven 3.6.3 or higher
 
-## Build and Run
+## Build and Run 🔧
 
 ```bash
 git clone https://github.com/wiccana/mutant-dna.git
@@ -20,7 +20,7 @@ mvn spring-boot:run
 ```
 Application should be served at localhost:8080
 
-## Test running app ⚙️
+## Test running app ✔️
 
 ```
 curl -v --header "Content-Type: application/json" -d "{\"dna\":[\"ATAG\",\"AAAA\",\"ACGC\",\"AAAC\"]}" http://localhost:8080/mutant
@@ -28,7 +28,7 @@ curl -v --header "Content-Type: application/json" -d "{\"dna\":[\"ATAG\",\"AAAA\
 should return 200 status code
 
 
-## Run test coverage ⚙️
+## Test coverage report with Jacoco 📈
 
 from project directory run:
 ```
@@ -36,14 +36,14 @@ mvn test jacoco:report
 ```
 Report should be accesible from target\site\jacoco\index.html
 
-## Online app on Heroku
+## Online app on Heroku ☁️
 
 Url: https://mutant-dna.herokuapp.com/
 ```
 curl -v --header "Content-Type: application/json" -d "{\"dna\":[\"ATAG\",\"AAAA\",\"ACGC\",\"AAAC\"]}" https://mutant-dna.herokuapp.com/mutant
 ```
 
-## Build with
+## Built with ⚡
 
 * [Visual Studio Code] (1.48.2) (https://code.visualstudio.com/)
 * [Spring Initializer] (https://start.spring.io/)
@@ -52,7 +52,7 @@ curl -v --header "Content-Type: application/json" -d "{\"dna\":[\"ATAG\",\"AAAA\
 * [Maven] (https://maven.apache.org/)
 * [JaCoCo] (https://www.jacoco.org/jacoco/trunk/doc/maven.html)
 
-## License
+## License 🔖
 This project is under GNU General Public License v3.0.
 Please check [LICENSE.md](LICENSE.md) for more details.
 
