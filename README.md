@@ -36,6 +36,13 @@ mvn test jacoco:report
 ```
 Report should be accesible from target\site\jacoco\index.html
 
+## Online app on Heroku
+
+Url: https://mutant-dna.herokuapp.com/
+```
+curl -v --header "Content-Type: application/json" -d "{\"dna\":[\"ATAG\",\"AAAA\",\"ACGC\",\"AAAC\"]}" https://mutant-dna.herokuapp.com/mutant
+```
+
 ## Build with
 
 * [Visual Studio Code] (1.48.2) (https://code.visualstudio.com/)
