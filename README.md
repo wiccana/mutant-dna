@@ -1,6 +1,6 @@
 # Mutant DNA 💡
 
-a technical challenge for MELI
+a technical challenge
 
 ## Prerequisites 📝
 
